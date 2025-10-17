@@ -9,7 +9,9 @@ public class Main {
         boolean teste = false;
         num = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual índice você está buscando?"));
 
-        while (meio < indexFim) {
+        while (meio <= indexFim) {
+            if (num < indexInicio || num > indexFim)
+                break;
             if (num == meio) {
                 teste = true;
                 break;
@@ -23,7 +25,9 @@ public class Main {
             contador++;
             meio = ((indexInicio + indexFim) / 2);
         }
-        if(teste) JOptionPane.showMessageDialog(null, "Índex encontrado: " + meio + " em " + contador + " iterações");
-        else JOptionPane.showMessageDialog(null, "Índex não encontrado");
+        if (teste)
+            JOptionPane.showMessageDialog(null, "Índex encontrado: " + meio + " em " + contador + " iterações");
+        else
+            JOptionPane.showMessageDialog(null, "Índex não encontrado");
     }
 }
